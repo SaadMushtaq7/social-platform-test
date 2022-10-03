@@ -19,15 +19,19 @@ const Stories = () => {
     setSuggestions(suggestions);
   }, []);
   return (
-    <div className="flex space-x-2 p-6 bg-white mt-8 border-gray-200 border rounded-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-black">
-      {suggestions.map((profile: any) => (
-        <Story
-          key={profile.userId}
-          img={profile.avatar}
-          username={profile.username}
-        />
-      ))}
-    </div>
+    <main className="grid grid-cols-1 md:grid-cols-1 md:max-w-1xl xl:grid-cols-1 xl:max-w-2xl max-auto">
+      <section className="col-span-1">
+        <div className="flex space-x-2 p-6 bg-white mt-8 border-gray-200 border rounded-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-black">
+          {suggestions.map((profile: any) => (
+            <Story
+              key={profile.userId}
+              img={profile.avatar}
+              username={profile.username}
+            />
+          ))}
+        </div>
+      </section>
+    </main>
   );
 };
 
